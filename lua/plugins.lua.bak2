@@ -1,0 +1,117 @@
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function(use)
+  -- My Plugins
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+-- " Track the engine.
+use 'SirVer/ultisnips'
+
+-- " Snippets are separated from the engine. Add this if you want them:
+use 'honza/vim-snippets'
+
+use {'lervag/vimtex', filetypes = 'plaintex'}
+  -- Post-install/update hook with neovim command
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+-- Julia plugins
+-- use 'JuliaEditorSupport/julia-vim'
+-- use 'kdheepak/JuliaFormatter.vim'
+-- use {
+	-- 'autozimu/LanguageClient-neovim', branch = 'master', run = 'bash install.sh'
+-- }
+use 'http://github.com/tpope/vim-surround' -- Surrounding ysw)
+use 'http://github.com/tpope/vim-fugitive' -- gitting stuff from vim
+use 'https://github.com/preservim/nerdtree' -- NerdTree
+use 'https://github.com/tpope/vim-commentary' -- For Commenting gcc & gc
+use 'https://github.com/vim-airline/vim-airline' -- Status bar
+-- use 'https://github.com/lifepillar/pgsql.vim' -- PSQL Pluging needs :SQLSetType pgsql.vim
+use 'https://github.com/ap/vim-css-color' -- CSS Color Preview
+use 'https://github.com/rafi/awesome-vim-colorschemes' -- Retro Scheme
+ -- nvim completion manager
+use 'ncm2/ncm2'
+
+use {'neoclide/coc.nvim', branch = 'release'}
+use 'https://github.com/ryanoasis/vim-devicons' -- Developer Icons
+use 'https://github.com/tc50cal/vim-terminal' -- Vim Terminal
+use 'https://github.com/preservim/tagbar' -- Tagbar for code navigation
+use 'https://github.com/terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
+use {'jpalardy/vim-slime',  filetypes = {'python', 'julia'}}
+-- use 'hanschen/vim-ipython-cell', { 'for': ['python', 'julia'] }
+use 'JuliaEditorSupport/julia-vim'
+use 'https://github.com/neovim/nvim-lspconfig'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+  -- Simple plugins can be specified as strings
+  use 'rstacruz/vim-closer'
+
+  -- Lazy loading:
+  -- Load on specific commands
+  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+
+  -- Load on an autocommand event
+  use {'andymass/vim-matchup', event = 'VimEnter'}
+
+  -- Load on a combination of conditions: specific filetypes or commands
+  -- Also run code after load (see the "config" key)
+  -- use {
+  --   'w0rp/ale',
+  --   ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+  --   cmd = 'ALEEnable',
+  --   config = 'vim.cmd[[ALEEnable]]'
+  -- }
+
+  -- Plugins can have dependencies on other plugins
+  use {
+    'haorenW1025/completion-nvim',
+    opt = true,
+    requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
+  }
+
+  -- Plugins can also depend on rocks from luarocks.org:
+--[[  use {
+    'my/supercoolplugin',
+    rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
+  }
+  ]]--
+
+  -- You can specify rocks in isolation
+  -- use_rocks 'penlight'
+  -- use_rocks {'lua-resty-http', 'lpeg'}
+
+  -- Local plugins can be included
+  -- use '~/projects/personal/hover.nvim'
+
+  -- Plugins can have post-install/update hooks
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+
+  -- Post-install/update hook with call of vimscript function with argument
+  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+
+  -- Use specific branch, dependency and run lua file after load
+  --[[ use {
+    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  ]]--
+
+  -- Use dependency and run lua function after load
+  use {
+    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
+  }
+
+  -- You can specify multiple plugins in a single call
+  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+
+  -- You can alias plugin names
+  use {'dracula/vim', as = 'dracula'}
+end)
