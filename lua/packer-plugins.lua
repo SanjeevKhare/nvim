@@ -60,10 +60,21 @@ use 'https://github.com/terryma/vim-multiple-cursors' --" CTRL + N for multiple 
 use {'jpalardy/vim-slime',  filetypes = {'python', 'julia'}}
 use 'lervag/vimtex'
 
-use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-})
+use {"lukas-reineke/indent-blankline.nvim", config = function() require("indent_blankline").setup {
+    -- for example, context is off by default, use this to turn it on
+    show_current_context = true,
+    show_current_context_start = true,
+} end}
+
+use {
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup()
+  end
+}
+
+use { "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,}
 
 -- set encoding=UTF-8
 --
