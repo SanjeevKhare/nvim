@@ -12,3 +12,13 @@ vim.opt.foldmethod='syntax'
 vim.opt.foldlevelstart=1
 vim.opt.encoding='UTF-8'
 
+vim.g.mapleader = ' '
+vim.g.NERDTreeDirArrowExpandable= '+'
+vim.g.NERDTreeDirArrowCollapsible="~"
+vim.g.slime_target="tmux"
+vim.g.slime_cell_delimiter = "##"
+vim.g.slime_paste_file = "$HOME/.slime_paste"
+
+-- Format on save
+vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
+

@@ -6,6 +6,11 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " or                                , { 'branch': '0.1.x' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'windwp/nvim-autopairs'
+Plug 'folke/which-key.nvim'
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
 " Plug 'kdheepak/JuliaFormatter.vim'
