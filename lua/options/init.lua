@@ -20,5 +20,5 @@ vim.g.slime_cell_delimiter = "##"
 vim.g.slime_paste_file = "$HOME/.slime_paste"
 
 -- Format on save
-vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
+-- vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
 

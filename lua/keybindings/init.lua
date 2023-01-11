@@ -10,10 +10,11 @@ function imap(shortcut, command)
 map('i', shortcut, command)
 end
 
-vim.cmd('colorscheme jellybeans')
+-- vim.cmd('colorscheme jellybeans')
+vim.cmd('colorscheme rose-pine')
 vim.g.mapleader = ' '
-vim.g.NERDTreeDirArrowExpandable= '+'
-vim.g.NERDTreeDirArrowCollapsible="~"
+-- vim.g.NERDTreeDirArrowExpandable= '+'
+-- vim.g.NERDTreeDirArrowCollapsible="~"
 vim.g.slime_target="tmux"
 vim.g.slime_cell_delimiter = "##"
 vim.g.slime_paste_file = "$HOME/.slime_paste"
@@ -23,7 +24,7 @@ nmap('<leader>f', 'V%<Plug>SlimeSendCell')
 -- nnoremap <C-u> <V><%><Plug>SlimeSendCell
 -- nnoremap <C-f> :NERDTreeFocus<CR>
 -- nmap('<C-n>', ':NERDTree<CR>')
-nmap('<C-t><C-r>', ':NERDTreeToggle<CR>')
+nmap('<C-t><C-r>', ':NvimTreeToggle<CR>')
 -- nmap('<C-l>', ':call, CocActionAsync("jumpDefinition")<CR>')
 nmap('<C-J>', '<C-W><C-J>')
 nmap('<C-K>', '<C-W><C-K>')
