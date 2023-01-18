@@ -1,8 +1,12 @@
 require('packer-plugins')
+require('treesitter-config')
+require('nvim-tree-config')
+require('bufferline-config')
+require('nvim-tree-config')
+require('telescope-config')
 require('keybindings')
 require('options')
-
-require('language_server_setup')
+require('lsp-config')
 vim.cmd('colorscheme rose-pine')
 -- vim.cmd[[:colorscheme jellybean]]
 -- require('completion_setup')
