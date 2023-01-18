@@ -59,7 +59,8 @@ return require'packer'.startup(function(use)
     use 'hrsh7th/cmp-buffer' 
     use 'hrsh7th/cmp-vsnip' 
 	use 'saadparwaiz1/cmp_luasnip'
-	use {'L3MON4D3/LuaSnip', after = 'nvim-cmp', config = function() require('config.snippets') end,}
+	-- use {'L3MON4D3/LuaSnip', after = 'nvim-cmp', config = function() require('config.snippets') end,}
+	use {'L3MON4D3/LuaSnip', after = 'nvim-cmp', config = "require('luasnip-config')"}
 	use 'rafamadriz/friendly-snippets'
 	use 'honza/vim-snippets'
 
