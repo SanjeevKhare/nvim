@@ -11,7 +11,6 @@ map('i', shortcut, command)
 end
 
 -- vim.cmd('colorscheme jellybeans')
-vim.cmd('colorscheme rose-pine')
 vim.g.mapleader = ' '
 -- vim.g.NERDTreeDirArrowExpandable= '+'
 -- vim.g.NERDTreeDirArrowCollapsible="~"

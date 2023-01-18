@@ -72,5 +72,5 @@
     }
   })
 
-  -- Load snippets
+-- Load snippets
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
